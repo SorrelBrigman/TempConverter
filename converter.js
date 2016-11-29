@@ -41,7 +41,6 @@ var toFahr = function() {
 	fH1.appendChild(Ftext);
 }
 
-bF.onclick = toFahr();
 	//change color for temp
 
 //When C button is pressed

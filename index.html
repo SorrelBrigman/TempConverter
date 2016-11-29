@@ -7,34 +7,38 @@
 	</head>
 	<body>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-5 col-md-offset-3">	
-				<h1>Temperature Converter</h1>
-				<label>Enter a numeric temperature here:</label>
-				<input type="text" name="temperature" id="tempInput">
+		<form>
+		  <fieldset>
+			<div class="row">
+				<div class="col-md-5 col-md-offset-3">	
+					<h1>Temperature Converter</h1>
+					<label>Enter a numeric temperature here:</label>
+					<input type="text" name="temperature" id="tempInput">
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-5 col-md-offset-3">	
-				<h4>Pick the current scale of the given temperature:</h4>
+			<div class="row">
+				<div class="col-md-5 col-md-offset-3">	
+					<h4>Pick the current scale of the given temperature:</h4>
+				</div>
+			</div>	
+			<div class="row">	
+				<div class="col-md-2 col-md-offset-3">	
+					<input type="radio" name="scale" value="celsius" id="buttonC"> Celsius
+				</div>
+				<div class=col-md-2 col-md-offset-3">
+					<input type="radio" name="scale" value="fahrenheit" id="buttonF"> Fahrenheit
+				</div>
 			</div>
-		</div>	
-		<div class="row">	
-			<div class="col-md-2 col-md-offset-3">	
-				<input type="radio" name="scale" value="celsius" id="buttonC"> Celsius
+			<div class="row">
+				<div class="col-md-2 col-md-offset-2">	
+					<input class="btn btn-default" type="submit" value="Convert">
+				</div>
+				<div class="col-md-2 ">	
+					<input class="btn btn-default" type="reset" value="Reset">
+				</div>
 			</div>
-			<div class=col-md-2 col-md-offset-3">
-				<input type="radio" name="scale" value="fahrenheit" id="buttonF"> Fahrenheit
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-2 col-md-offset-4">	
-				<input class="btn btn-default" type="submit" value="Convert">
-			</div>
-			<div class="col-md-2 ">	
-				<input class="btn btn-default" type="reset" value="Reset">
-			</div>
-		</div>
+		  </fieldset>	
+		</form>	
 		<div class="row">		
 			<div class="col-md-5 col-md-offset-3 answer">
 					<h1 id="celsius"></h1>	
