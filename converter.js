@@ -10,7 +10,7 @@ var bF = document.getElementById("buttonF");
 var toFahr = function() {
 	//take value from input field
 	//convert to F
-	var newTempF = ((9/5)*input) + 32;
+	var newTempF = Math.round((((9/5)*input) + 32)*10)/10;
 	//post new value for F to page
 	var fH1 = document.getElementById("fahrenheit");
 	var Ftext = document.createTextNode(newTempF + " degrees F");
@@ -31,7 +31,7 @@ var bC = document.getElementById("buttonC");
 var toCel = function () {
 	//take value from inpyt field
 	//convert to C
-	var newTempC = ((5/9)*input) - 32;
+	var newTempC = Math.round((((5/9)*input) - 32)*10)/10;
 	//post new value for C to page
 	var cH1 = document.getElementById("celsius");
 	var Ctext = document.createTextNode(newTempC + " degrees C");
