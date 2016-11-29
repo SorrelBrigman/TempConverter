@@ -7,6 +7,26 @@ var input = parseInt(inputElement);
 var bF = document.getElementById("buttonF");
 //call function
 
+var low;
+var high;
+var actualTemp;
+
+var tempColor = function(high, low) {
+	if (actualTemp > high){
+
+	} else if (actualTemp < low){
+
+	} else {
+
+	}
+}
+
+
+
+
+
+
+
 var toFahr = function() {
 	//take value from input field
 	//convert to F
