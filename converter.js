@@ -12,7 +12,7 @@ var conBut = document.getElementById("convert");
 //assign reset button to var
 var resetBut = document.getElementById("reset");
 
-
+var Ttext;
 //create var to label answer div
 var answerH1 = document.getElementById("answer");
 // var for tempColor function
@@ -50,8 +50,8 @@ var toFahr = function() {
 	var newTempF = Math.round((((9/5)*input) + 32) * 10)/10;
 	//post new value for F to page
 
-	var Ftext = document.createTextNode(newTempF + " degrees F");
-	answerH1.appendChild(Ftext);
+	Ttext = document.createTextNode(newTempF + " degrees F");
+	answerH1.appendChild(Ttext);
 	
 	//change color for temp
 	tempColor(90, 32, newTempF);
@@ -67,8 +67,8 @@ var toCel = function () {
 	//convert to C
 	var newTempC = Math.round(((input - 32) * (5/9))*10)/10;
 	//post new value for C to page
-	var Ctext = document.createTextNode(newTempC + " degrees C");
-	answerH1.appendChild(Ctext);	
+	Ttext = document.createTextNode(newTempC + " degrees C");
+	answerH1.appendChild(Ttext);	
 	//change color for temp
 	tempColor(32, 0, newTempC);
 }
@@ -87,10 +87,14 @@ var checkButtons = function() {
 
 }
 
+var reload = function() {
+	answerH1.removeChild(Ttext);
+}
+
 //On Submit 
 // var smiles = function() {alert(input);}
 conBut.onclick = checkButtons;
 // conBut.onclick = checkButtons;
 
-
+resetBut.onclick = reload;
 
