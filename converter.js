@@ -15,11 +15,6 @@ var toFahr = function() {
 	var fH1 = document.getElementById("fahrenheit");
 	var Ftext = document.createTextNode(newTempF + " degrees F");
 	fH1.appendChild(Ftext);
-
-	//post old value of C to page
-	var cH1 = document.getElementById("celsius");
-	var Ctext = document.createTextNode(input + " degrees C");
-	cH1.appendChild(Ctext);
 }
 
 bF.onclick = toFahr();
@@ -36,10 +31,7 @@ var toCel = function () {
 	var cH1 = document.getElementById("celsius");
 	var Ctext = document.createTextNode(newTempC + " degrees C");
 	cH1.appendChild(Ctext);
-	//post old value of F to page
-	var fH1 = document.getElementById("fahrenheit");
-	var Ftext = document.createTextNode(input + " degrees F");
-	fH1.appendChild(Ftext);
+	
 	//change color for temp
 }
 bC.onclick = toCel();
