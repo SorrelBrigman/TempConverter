@@ -7,17 +7,21 @@ var input = parseInt(inputElement);
 var bF = document.getElementById("buttonF");
 //call function
 
+//create var to label answer div
+var answerDiv = document.getElementById("answer");
+// var for tempColor function
 var low;
 var high;
 var actualTemp;
 
+//tempColor function
 var tempColor = function(high, low) {
 	if (actualTemp > high){
-
+		answerDiv.setAttribute("color", "red");
 	} else if (actualTemp < low){
-
+		answerDiv.setAttribute("color", "blue");
 	} else {
-
+		answerDiv.setAttribute("color", "green");
 	}
 }
 
