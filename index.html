@@ -7,13 +7,13 @@
 	</head>
 	<body>
 	<div class="container">
-		<form>
+		<form action="#">
 		  <fieldset>
 			<div class="row">
 				<div class="col-md-5 col-md-offset-3">	
 					<h1>Temperature Converter</h1>
 					<label>Enter a numeric temperature here:</label>
-					<input type="text" name="temperature" id="tempInput">
+					<input type="number" name="temperature" id="tempInput">
 				</div>
 			</div>
 			<div class="row">
@@ -31,18 +31,18 @@
 			</div>
 			<div class="row">
 				<div class="col-md-2 col-md-offset-2">	
-					<input class="btn btn-default" type="submit" value="Convert">
+					<input id="convert" class="btn btn-default" type="submit" value="Convert">
 				</div>
 				<div class="col-md-2 ">	
-					<input class="btn btn-default" type="reset" value="Reset">
+					<input id="reset" class="btn btn-default" type="reset" value="Reset">
 				</div>
 			</div>
 		  </fieldset>	
 		</form>	
 		<div class="row">		
-			<div class="col-md-5 col-md-offset-3 answer">
-					<h1 id="celsius"></h1>	
-					<h1 id="fahrenheit"></h1>
+			<div class="col-md-5 col-md-offset-3">
+					<h1 id="answer"></h1>	
+					
 			</div>	
 		</div>
 	</div>

@@ -1,27 +1,39 @@
 //Take Value From Input Field
+// var inputElement = prompt("Enter Temp");
 
-var inputElement = prompt("What is a temp?")
 // var input = inputElement.value;
-var input = parseInt(inputElement);
-//When F button is pressed
+
+//assign F button to var
 var bF = document.getElementById("buttonF");
-//call function
+//assign C button to var
+var bC = document.getElementById("buttonC");
+// assign convert button to var
+var conBut = document.getElementById("convert");
+//assign reset button to var
+var resetBut = document.getElementById("reset");
+
 
 //create var to label answer div
-var answerDiv = document.getElementById("answer");
+var answerH1 = document.getElementById("answer");
 // var for tempColor function
 var low;
 var high;
 var actualTemp;
 
 //tempColor function
-var tempColor = function(high, low) {
-	if (actualTemp > high){
-		answerDiv.setAttribute("color", "red");
-	} else if (actualTemp < low){
-		answerDiv.setAttribute("color", "blue");
+var tempColor = function(high, low, actualTemp) {
+	//If temp > 90F/32C text is red
+	if (actualTemp > high) {
+		console.log("red")
+		answerH1.style.color = "red";
+		//if temp < 32F/0C text is blue
+	} else if (actualTemp < low) {
+		console.log("blue")
+		answerH1.style.color = "blue";
+		//else text is green
 	} else {
-		answerDiv.setAttribute("color", "green");
+		console.log("green")
+		answerH1.style.color = "green";
 	}
 }
 
@@ -29,35 +41,56 @@ var tempColor = function(high, low) {
 
 
 
-
-
+//to F function
 var toFahr = function() {
+	event.preventDefault();
 	//take value from input field
+	var input = document.getElementById("tempInput").value;
 	//convert to F
-	var newTempF = Math.round((((9/5)*input) + 32)*10)/10;
+	var newTempF = Math.round((((9/5)*input) + 32) * 10)/10;
 	//post new value for F to page
-	var fH1 = document.getElementById("fahrenheit");
+
 	var Ftext = document.createTextNode(newTempF + " degrees F");
-	fH1.appendChild(Ftext);
-}
-
-	//change color for temp
-
-//When C button is pressed
-var bC = document.getElementById("buttonC");
-//call function
-var toCel = function () {
-	//take value from inpyt field
-	//convert to C
-	var newTempC = Math.round((((5/9)*input) - 32)*10)/10;
-	//post new value for C to page
-	var cH1 = document.getElementById("celsius");
-	var Ctext = document.createTextNode(newTempC + " degrees C");
-	cH1.appendChild(Ctext);
+	answerH1.appendChild(Ftext);
 	
 	//change color for temp
+	tempColor(90, 32, newTempF);
+
 }
-bC.onclick = toCel();
-//If temp > 90F/32C text is red
-//if temp < 32F/0C text is blue
-//else text is green
+
+//to C function
+var toCel = function () {
+	event.preventDefault();
+	//take value from input field
+	var input = document.getElementById("tempInput").value;
+
+	//convert to C
+	var newTempC = Math.round(((input - 32) * (5/9))*10)/10;
+	//post new value for C to page
+	var Ctext = document.createTextNode(newTempC + " degrees C");
+	answerH1.appendChild(Ctext);	
+	//change color for temp
+	tempColor(32, 0, newTempC);
+}
+
+//Test value of selected buttons
+var checkButtons = function() {
+	if (bF.checked) {
+			toCel();
+		console.log("F");
+	} else if (bC.checked) {
+			toFahr();
+		console.log("C");
+	} else {
+		alert("Please pick whether Celsius or Fahrenheit");
+	}
+
+}
+
+//On Submit 
+// var smiles = function() {alert(input);}
+conBut.onclick = checkButtons;
+// conBut.onclick = checkButtons;
+
+
+
